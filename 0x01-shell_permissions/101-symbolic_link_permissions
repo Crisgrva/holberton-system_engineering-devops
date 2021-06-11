@@ -1,2 +1,2 @@
 #!/bin/bash
-ln -s chown betty:holberton _hello
+ln -s chown betty:holberton /_hello
