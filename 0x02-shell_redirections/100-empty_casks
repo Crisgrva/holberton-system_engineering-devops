@@ -1,2 +1,2 @@
 #!/bin/bash
-ls . */ | find . -empty | tr -d "./"
+find . */  -empty | tr -d "./"
