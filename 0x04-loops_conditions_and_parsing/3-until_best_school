@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+min=1
+max=10
+
+until [ $max -lt $min ]
+do
+  echo "Best School"
+  min=$(($min + 1))
+done

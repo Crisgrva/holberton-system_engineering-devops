@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#This script prints the content of the current directory
+for line in `ls .`
+do
+  echo $line | cut -d '-' -f2-
+done
