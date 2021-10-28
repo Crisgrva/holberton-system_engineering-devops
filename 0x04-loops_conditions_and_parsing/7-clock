@@ -9,9 +9,9 @@ echo "Hour: $hours"
   while [ $minutes -le 59 ]
   do
     echo "$minutes"
-    minutes=$(($minutes + 1))
+    minutes=$((minutes + 1))
   done
 
-  hours=$(($hours + 1))
+  hours=$((hours + 1))
   minutes=1
 done
