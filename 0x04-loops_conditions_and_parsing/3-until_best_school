@@ -6,5 +6,5 @@ max=10
 until [ $max -lt $min ]
 do
   echo "Best School"
-  min=$(($min + 1))
+  min=$((min + 1))
 done
