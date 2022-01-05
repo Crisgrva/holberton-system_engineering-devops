@@ -1,4 +1,4 @@
-file { '0-create_a_file':
+file { '0-create_a_file.pp':
   path    => '/tmp/school',
   owner   => 'www-data',
   group   => 'www-data',
