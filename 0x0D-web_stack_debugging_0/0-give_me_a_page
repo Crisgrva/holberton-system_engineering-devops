@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
+# 0. Give me a page!
 sudo service apache2 start
-cp /etc/passwd /tmp/
-echo OK > /tmp/isworking
