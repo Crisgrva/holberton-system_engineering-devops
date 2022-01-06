@@ -11,7 +11,7 @@ sed -i "/listen 80 default_server;/ a rewrite ^/redirect_me https://www.youtube.
 
 # Add custom 404 page error
 sudo chmod 777 /var/www/html
-echo "Ceci n'est pas une page" > 404_not_found.html
+echo "Ceci n'est pas une page\n" > /var/www/html/404_not_found.html
 sed -i "/listen 80 default_server;/ a error_page 404 /404_not_found.html;" /etc/nginx/sites-available/default
 
 sudo service nginx restart
