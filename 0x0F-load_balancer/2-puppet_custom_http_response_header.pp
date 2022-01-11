@@ -6,7 +6,7 @@ exec { 'HTTP_header_Puppet':
                service nginx start;
                sudo chmod 777 /etc/nginx;
                sudo chmod 777 /etc/nginx/nginx.conf;
-               sudo sed -i '/sendfile on;/ a add_header X-Served-By $HOSTNAME;' /etc/nginx/nginx.conf;
+               sudo sed -i "/sendfile on;/ a add_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf;
                sudo service nginx restart',
   provider => 'shell',
 }
