@@ -41,7 +41,7 @@ backend web_backend
 frontend haproxy
     #public IP address binded
     bind *:80
-    bind *:443 ssl crt /etc/ssl/www.crisgrva.tech.pem
+    bind *:443 ssl crt /etc/ssl/www.crisgrva.tech.pem alpn h2,http/1.1
 
     # HTTPS redirect
     redirect scheme https code 301 if !{ ssl_fc }
