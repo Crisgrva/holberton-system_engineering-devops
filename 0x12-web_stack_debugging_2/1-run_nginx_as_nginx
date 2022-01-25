@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # nginx must be running as nginx user
 echo 'nginx ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo
+pkill -9 apache2
+sed -i 's/80/8080/g' /etc/nginx/sites-available/default
 chmod 755 /etc/nginx/nginx.conf
 su - nginx -c "service nginx start"
