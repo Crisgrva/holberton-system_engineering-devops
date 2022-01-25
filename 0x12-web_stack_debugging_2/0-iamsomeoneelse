@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Bash script that runs file as another Linux User
 user=$1
-su - "$user" -c 'whoami'
+sudo -u "$user" whoami
