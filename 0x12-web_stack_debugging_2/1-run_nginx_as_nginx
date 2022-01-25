@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# nginx must be running as nginx user
+echo 'nginx ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo
+chmod 755 /etc/nginx/nginx.conf
+su - nginx -c "service nginx start"
