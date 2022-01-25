@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Bash script that generates a MySQL dump and compress archive
+
+#Getting password from prompt
+passwd=$1
+
+#Generating mysql backup of all databases
+mysqldump -u root -p"$passwd" --all-databases > backup.sql
+
+# Compressing backup.sql into datetime.tar.gz
+tar -zcvf "$(date '+%d-%m-%Y').tar.gz" backup.sql
