@@ -3,8 +3,8 @@
 Gather data from an API
 """
 import csv
-import requests
 import json
+import requests
 from sys import argv
 
 
