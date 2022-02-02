@@ -4,6 +4,7 @@ Gather data from an API
 """
 import csv
 import requests
+import json
 from sys import argv
 
 
@@ -71,4 +72,4 @@ allTasks = {str(task["id"]): Task(**task) for task in tasks}
 if __name__ == "__main__":
     user = allUsers.get(argv[1])
     user.add_tasks(**allTasks)
-    print({str(user.id): user.allTasks()})
+    print(json.dumps({str(user.id): user.allTasks()}))
