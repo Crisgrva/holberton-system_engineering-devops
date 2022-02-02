@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-0. Gather data from an API
+Gather data from an API
 """
 import requests
 from sys import argv
@@ -47,6 +47,7 @@ users = requests.get("https://jsonplaceholder.typicode.com/users").json()
 allUsers = {str(user["id"]): User(**user) for user in users}
 allTasks = {str(task["id"]): Task(**task) for task in tasks}
 
-user = allUsers.get(argv[1])
-user.add_tasks(**allTasks)
-user.tasksCompleted()
+if __name__ == "__main__":
+    user = allUsers.get(argv[1])
+    user.add_tasks(**allTasks)
+    user.tasksCompleted()
