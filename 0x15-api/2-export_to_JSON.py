@@ -46,11 +46,17 @@ class User:
                      task.title]
                 )
 
+    def exportToJson(self):
+        """Method to expor JsonFile"""
+        with open("{}.json".format(self.id), "w") as fd:
+            json.dump(self.allTasks(), fd)
+
     def allTasks(self):
         """Method to print list of all tasks"""
-        return [{"task": task.title,
-                "completed": task.completed,
-                 "username": self.username} for task in self.tasks]
+        allTasks = [{"task": task.title,
+                    "completed": task.completed,
+                     "username": self.username} for task in self.tasks]
+        return {str(self.id): allTasks}
 
 
 class Task:
@@ -72,4 +78,4 @@ allTasks = {str(task["id"]): Task(**task) for task in tasks}
 if __name__ == "__main__":
     user = allUsers.get(argv[1])
     user.add_tasks(**allTasks)
-    print(json.dumps({str(user.id): user.allTasks()}))
+    user.exportToJson()
