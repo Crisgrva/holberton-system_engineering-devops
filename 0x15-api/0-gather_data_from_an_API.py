@@ -50,6 +50,3 @@ allTasks = {str(task["id"]): Task(**task) for task in tasks}
 user = allUsers.get(argv[1])
 user.add_tasks(**allTasks)
 user.tasksCompleted()
-
-
-# tasksCompleted(2)
