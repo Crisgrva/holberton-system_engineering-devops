@@ -27,7 +27,7 @@ class User:
         print("Employee {} is done with tasks({}/{}):".format(self.name,
               done, len(((self.tasks)))))
 
-        [print("     {}".format(task.title))
+        [print("\t {}".format(task.title))
          for task in self.tasks if task.completed is True]
 
 
