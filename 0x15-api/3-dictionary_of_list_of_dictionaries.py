@@ -53,9 +53,9 @@ class User:
 
     def allTasks(self):
         """Method to print list of all tasks"""
-        allTasks = [{"task": task.title,
-                    "completed": task.completed,
-                     "username": self.username} for task in self.tasks]
+        allTasks = [{"username": self.username,
+                     "task": task.title,
+                     "completed": task.completed} for task in self.tasks]
         return allTasks
 
 
