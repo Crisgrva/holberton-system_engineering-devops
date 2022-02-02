@@ -36,7 +36,7 @@ class User:
         """Method to export all tasks as cvs"""
 
         with open("{}.csv".format(self.id), "w") as fd:
-            writer = csv.writer(fd)
+            writer = csv.writer(fd, quoting=csv.QUOTE_ALL)
             for task in self.tasks:
                 writer.writerow(
                     [task.userId,
