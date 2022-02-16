@@ -24,7 +24,7 @@ def number_of_subscribers(subreddit):
                     Gecko/20100101 Firefox/47.0"}
 
     res = requests.get(url, headers=headers).json()
-    try:
+    if re.status_code == 200:
         return res['data']['subscribers']
-    except Exception:
+    else if re.status_code == 404:
         return 0
