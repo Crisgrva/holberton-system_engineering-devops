@@ -24,4 +24,4 @@ def number_of_subscribers(subreddit):
     try:
         return res['data']['subscribers']
     except Exception:
-        return 1
+        return 0
