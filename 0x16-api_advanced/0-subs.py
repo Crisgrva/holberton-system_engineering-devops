@@ -23,8 +23,9 @@ def number_of_subscribers(subreddit):
                "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0)\
                     Gecko/20100101 Firefox/47.0"}
 
-    res = requests.get(url, headers=headers).json()
-    if re.status_code == 200:
-        return res['data']['subscribers']
-    else if re.status_code == 404:
+    res = requests.get(url, headers=headers)
+    data = res.json()
+    if res.status_code == 200:
+        return data['data']['subscribers']
+    elif res.status_code == 404:
         return 0
