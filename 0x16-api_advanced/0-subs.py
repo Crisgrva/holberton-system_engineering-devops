@@ -15,6 +15,9 @@ def number_of_subscribers(subreddit):
     subreddit is given, the function should
     return 0."""
 
+    if not subreddit:
+        return 0
+
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     headers = {"User-Agent":
                "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0)\
